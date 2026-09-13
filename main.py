@@ -25,6 +25,7 @@ driver.get("https://selenium-practice.danielsam.cc")
 button = driver.find_element(By.XPATH, '//*[@id="increment-btn"]')
 
 for i in range(NUM_TEST):
+	print("Button click")
 	button.click()
 
 counter = driver.find_element(By.XPATH, '//*[@id="counter-value"]')
@@ -35,6 +36,6 @@ print("Counter value from page: " + counter.text)
 
 assert NUM_TEST, counter.text
 
-
+driver.save_screenshot("counter_click.png")
 
 driver.quit()
